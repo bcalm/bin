@@ -1,15 +1,10 @@
-rm -rf *.o
-echo '\n'Compiling...
-gcc -c *.c
-echo ...done
-if(($? == 0))
-then
-  echo '\n'linking...
-  gcc -o a.out  *.o
-  echo ...done
-  echo '\n'executing...'\n'
+echo Compiling...
+gcc $1 
+if [ $? == 0 ]
+then 
+  echo '\n'...done
+  echo '\n'Executing...
   ./a.out
-  rm -rf *.o
   rm -rf a.out
-echo '\n'...done
 fi
+echo '\n'done...
